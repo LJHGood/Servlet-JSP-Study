@@ -1,6 +1,9 @@
 package com.ServletJSPStudy.www;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +15,15 @@ public class NaverClass extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("안녕?");
+//		OutputStream os = resp.getOutputStream();
+//		PrintStream out = new PrintStream(os, true);
+//		out.println("Hello!<br/>");
+//		out.println("Hello!<br/>");
+//		out.println("Hello!<br/>");
+//		out.println("Hello!<br/>");
+		
+		PrintWriter out = resp.getWriter();
+		out.println("Hello");
 	}
 
 }
