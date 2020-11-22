@@ -22,6 +22,11 @@ public class NoticeClass extends HttpServlet {
 		// 브라우저 컨텐츠를 UTF-8로 읽어라 설정
 		response.setContentType("text/html; charset=UTF-8"); 
 		
+		// 받을 때 UTF-8형식으로 해라.
+		// 귀찮으면 server.xml에서 Connector 태그에 URIEncoding를 UTF-8로 설정해주면된다.
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 
